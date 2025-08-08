@@ -60,17 +60,29 @@ python manage.py runserver
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+<img width="827" height="882" alt="image" src="https://github.com/user-attachments/assets/ee2cfae3-b2fb-4ee4-b8fe-e28804bacc2f" />
+(Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+<img width="767" height="892" alt="image" src="https://github.com/user-attachments/assets/203521e0-b8e7-4929-94f2-3067af02cee5" />
+(Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+<img width="777" height="895" alt="image" src="https://github.com/user-attachments/assets/2714a746-4ca8-4092-a530-18f788b21667" />
+(Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
+<img width="532" height="912" alt="image" src="https://github.com/user-attachments/assets/8e9ca83e-9f9c-4272-9e83-b33df047550d" />
+(Add screenshot 3 here with proper name)
+*Add caption explaining what this shows*
+
+<img width="786" height="892" alt="image" src="https://github.com/user-attachments/assets/224c2f9c-4d0f-475a-ae12-e84ac5ff2af2" />
+(Add screenshot 3 here with proper name)
+*Add caption explaining what this shows*
+
+# <img width="2048" height="899" alt="undefined_User_Interaction_Flow" src="https://github.com/user-attachments/assets/11960628-20c0-4c86-b85a-50fa1dcfe782" />
+Diagrams
+(Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
 
 
@@ -85,8 +97,9 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+
+https://github.com/user-attachments/assets/a7c61a25-9ff4-4f1c-b100-e348c0197a11
+When a user visits The Un-Linguist web app, they are greeted with a clean and minimal interface featuring a text input box and a “Send” button. The user simply types any message — from casual greetings to curious questions — and submits it. Upon submission, the page refreshes to display three distinct outputs: a coherent AI-generated response, a humorously distorted “absurd multilingual” version created by passing the original reply through multiple translations, and a Morse code version accompanied by a small decoding clue. This simple yet quirky interface allows the user to repeatedly input new messages and instantly see these playful transformations without any complicated navigation or clutter.
 
 # Additional Demos
 [Add any extra demo materials/links]
