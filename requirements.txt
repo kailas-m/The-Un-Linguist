@@ -1,0 +1,9 @@
+django~=4.2
+torch
+transformers
+requests
+deepl
+nltk
+openai
+python-dotenv
+

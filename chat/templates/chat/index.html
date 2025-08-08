@@ -1,0 +1,151 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Un-Linguist 🤪</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f6fa; margin: 0; }
+        .chat-container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 0 0 80px 0; position: relative; }
+        .chat-header { padding: 24px 24px 0 24px; }
+        .chat-title { font-size: 2rem; margin-bottom: 8px; }
+        .chat-bubbles { padding: 24px; }
+        .bubble { display: flex; margin-bottom: 18px; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; background: #eee; margin-right: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .bubble-content { background: #f0f4ff; border-radius: 8px; padding: 14px 18px; max-width: 80%; }
+        .bubble.user .bubble-content { background: #d1ffe7; margin-left: auto; }
+        .bubble.user .avatar { background: #b2f7ef; margin-right: 0; margin-left: 12px; }
+        .bubble.ai .avatar { background: #e0e7ff; }
+        .bubble-title { font-weight: bold; margin-bottom: 4px; }
+        .output-section { margin-top: 8px; }
+        .output-label { font-size: 0.95rem; color: #888; margin-bottom: 2px; }
+        .output-value { white-space: pre-wrap; }
+        .chat-input-box { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #eee; padding: 18px 0; }
+        .chat-input-inner { max-width: 600px; margin: 0 auto; display: flex; gap: 12px; }
+        textarea { flex: 1; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; padding: 10px; resize: none; }
+        input[type="submit"] { background: #4f8cff; color: #fff; border: none; border-radius: 8px; padding: 0 24px; font-size: 16px; cursor: pointer; }
+        @media (max-width: 700px) {
+            .chat-container, .chat-input-inner { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-title">The Un-Linguist 🤖</div>
+            <div style="color:#888;">A playful ChatGPT-like interface for multilingual fun!</div>
+        </div>
+        <div class="chat-bubbles">
+            {% if user_input %}
+            <div class="bubble user">
+                <div class="bubble-content">
+                    <span class="bubble-title">You</span>
+                    <div class="output-value">{{ user_input }}</div>
+                </div>
+                <div class="avatar">🧑</div>
+            </div>
+            {% endif %}
+
+            {% if step == "choose_mode" %}
+            <div class="bubble ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble-content">
+                    <span class="bubble-title">Un-Linguist</span>
+                    <div class="output-section">
+                        <div class="output-label">How would you like your answer?</div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_input" value="{{ user_input }}">
+                            <button type="submit" name="mode" value="easy">Easy</button>
+                            <button type="submit" name="mode" value="hard">Tough</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if step == "easy" %}
+            <div class="bubble ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble-content">
+                    <span class="bubble-title">Un-Linguist</span>
+                    <div class="output-section">
+                        <div class="output-label">🌍 Absurd Multilingual Output:</div>
+                        <div class="output-value">{{ output }}</div>
+                    </div>
+                    <form method="POST" style="margin-top:12px;">
+                        {% csrf_token %}
+                        <input type="hidden" name="user_input" value="{{ user_input }}">
+                        <input type="hidden" name="mode" value="easy">
+                        <button type="submit" name="action" value="give_up">Give Up</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if step == "hard" %}
+            <div class="bubble ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble-content">
+                    <span class="bubble-title">Un-Linguist</span>
+                    <div class="output-section">
+                        <div class="output-label">🔐 Encrypted (Random Additive Shift):</div>
+                        <div class="output-value">{{ cipher }}</div>
+                    </div>
+                    <form method="POST" style="margin-top:12px;">
+                        {% csrf_token %}
+                        <input type="hidden" name="user_input" value="{{ user_input }}">
+                        <input type="hidden" name="mode" value="hard">
+                        <button type="submit" name="action" value="need_help">Need Help</button>
+                        <button type="submit" name="action" value="give_up">Give Up</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if step == "hard_help" %}
+            <div class="bubble ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble-content">
+                    <span class="bubble-title">Un-Linguist</span>
+                    <div class="output-section">
+                        <div class="output-label">🔐 Encrypted (Random Additive Shift):</div>
+                        <div class="output-value">{{ cipher }}</div>
+                    </div>
+                    <div class="output-section">
+                        <div class="output-label">🗝️ Cipher Clue:</div>
+                        <div class="output-value">{{ clue }}</div>
+                    </div>
+                    <form method="POST" style="margin-top:12px;">
+                        {% csrf_token %}
+                        <input type="hidden" name="user_input" value="{{ user_input }}">
+                        <input type="hidden" name="mode" value="hard">
+                        <button type="submit" name="action" value="give_up">Give Up</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if step == "give_up" %}
+            <div class="bubble ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble-content">
+                    <span class="bubble-title">Un-Linguist</span>
+                    <div class="output-section">
+                        <div class="output-label">🎯 Coherent Response:</div>
+                        <div class="output-value">{{ base }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <form method="POST" class="chat-input-box">
+        <div class="chat-input-inner">
+            {% csrf_token %}
+            <textarea name="user_input" rows="2" placeholder="Type your message here...">{% if user_input %}{{ user_input }}{% endif %}</textarea>
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</body>
+</html>
