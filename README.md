@@ -61,28 +61,29 @@ For Software:
 
 # Screenshots (Add at least 3)
 <img width="827" height="882" alt="image" src="https://github.com/user-attachments/assets/ee2cfae3-b2fb-4ee4-b8fe-e28804bacc2f" />
-(Add screenshot 1 here with proper name)
+
 *Add caption explaining what this shows*
 
 <img width="767" height="892" alt="image" src="https://github.com/user-attachments/assets/203521e0-b8e7-4929-94f2-3067af02cee5" />
-(Add screenshot 2 here with proper name)
+
 *Add caption explaining what this shows*
 
 <img width="777" height="895" alt="image" src="https://github.com/user-attachments/assets/2714a746-4ca8-4092-a530-18f788b21667" />
-(Add screenshot 3 here with proper name)
+
 *Add caption explaining what this shows*
 
 <img width="532" height="912" alt="image" src="https://github.com/user-attachments/assets/8e9ca83e-9f9c-4272-9e83-b33df047550d" />
-(Add screenshot 3 here with proper name)
+
 *Add caption explaining what this shows*
 
 <img width="786" height="892" alt="image" src="https://github.com/user-attachments/assets/224c2f9c-4d0f-475a-ae12-e84ac5ff2af2" />
-(Add screenshot 3 here with proper name)
+
 *Add caption explaining what this shows*
 
-# <img width="2048" height="899" alt="undefined_User_Interaction_Flow" src="https://github.com/user-attachments/assets/11960628-20c0-4c86-b85a-50fa1dcfe782" />
+
 Diagrams
-(Add your workflow/architecture diagram here)
+<img width="1227" height="547" alt="image" src="https://github.com/user-attachments/assets/a4c53758-342e-4084-9883-8f77a2889fda" />
+
 *Add caption explaining your workflow*
 
 
