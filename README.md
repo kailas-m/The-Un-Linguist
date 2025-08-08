@@ -62,39 +62,98 @@ For Software:
 # Screenshots (Add at least 3)
 <img width="827" height="882" alt="image" src="https://github.com/user-attachments/assets/ee2cfae3-b2fb-4ee4-b8fe-e28804bacc2f" />
 
-*Add caption explaining what this shows*
+First Visit
+The user opens the page and sees:
+
+A title/header like "The Un-Linguist".
+
+A text box inviting them to type anything they want.
+
+A “Send” button below the box.
+
+The page looks clean and minimal, with enough spacing so the main focus is on the input.
 
 <img width="767" height="892" alt="image" src="https://github.com/user-attachments/assets/203521e0-b8e7-4929-94f2-3067af02cee5" />
 
-*Add caption explaining what this shows*
+The user types something like:
+Hello, how are you today?
+The typing area behaves like any normal input field — they can edit, delete, or paste text.
+Absurd Multilingual Output
+The same answer, but jumbled through multiple languages and back.
+
+It looks weird, mismatched, and funny.
 
 <img width="777" height="895" alt="image" src="https://github.com/user-attachments/assets/2714a746-4ca8-4092-a530-18f788b21667" />
-
-*Add caption explaining what this shows*
+Morse Code
+The answer is also shown in Morse code.
 
 <img width="532" height="912" alt="image" src="https://github.com/user-attachments/assets/8e9ca83e-9f9c-4272-9e83-b33df047550d" />
 
-*Add caption explaining what this shows*
+Clue to solve the morse code
 
 <img width="786" height="892" alt="image" src="https://github.com/user-attachments/assets/224c2f9c-4d0f-475a-ae12-e84ac5ff2af2" />
 
-*Add caption explaining what this shows*
+ AI’s Coherent Response
 
 
-Diagrams
+
+WorkflowDiagrams
 <img width="1227" height="547" alt="image" src="https://github.com/user-attachments/assets/a4c53758-342e-4084-9883-8f77a2889fda" />
 
-*Add caption explaining your workflow*
+┌─────────────┐
+│   User      │
+│ (Web Form)  │
+└─────┬───────┘
+      │
+      ▼
+┌───────────────────────────┐
+│ Django View: index(request)│
+│ - Handles POST form input  │
+└───────────┬───────────────┘
+            │
+            ▼
+┌─────────────────────────────┐
+│ generate_response()         │
+│ - Calls OpenRouter API       │
+│ - Sends user message         │
+│ - Receives AI response       │
+└───────────┬─────────────────┘
+            │
+            ▼
+┌─────────────────────────────┐
+│ jumble_translate()          │
+│ - Sends AI text to LibreTranslate│
+│ - Multiple translations + jumble │
+└───────────┬─────────────────┘
+            │
+            ▼
+┌─────────────────────────────┐
+│ extra fun:                  │
+│ - additive_shift_cipher()    │
+│ - morse_code() + clue        │
+└───────────┬─────────────────┘
+            │
+            ▼
+┌───────────────────────────┐
+│ Django Template (index.html)│
+│ - Shows:                    │
+│   1. Absurd multilingual text│
+│   2. Ciphered output         │
+│   3. Morse code + clue       │
+└───────────┬─────────────────┘
+            │
+            ▼
+┌─────────────┐
+│   User      │
+│ Laughs /    │
+│ Gets Confused│
+└─────────────┘
 
 
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+<img width="796" height="888" alt="image" src="https://github.com/user-attachments/assets/05ea6f51-30c0-4340-a83d-806c25a6fde2" />
 
-![Final](Add photo of final product here)
-*Explain the final build*
+
 
 ### Project Demo
 # Video
