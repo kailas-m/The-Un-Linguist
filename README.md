@@ -100,56 +100,9 @@ Clue to solve the morse code
 WorkflowDiagrams
 <img width="1227" height="547" alt="image" src="https://github.com/user-attachments/assets/a4c53758-342e-4084-9883-8f77a2889fda" />
 
-┌─────────────┐
-│   User      │
-│ (Web Form)  │
-└─────┬───────┘
-      │
-      ▼
-┌───────────────────────────┐
-│ Django View: index(request)│
-│ - Handles POST form input  │
-└───────────┬───────────────┘
-            │
-            ▼
-┌─────────────────────────────┐
-│ generate_response()         │
-│ - Calls OpenRouter API       │
-│ - Sends user message         │
-│ - Receives AI response       │
-└───────────┬─────────────────┘
-            │
-            ▼
-┌─────────────────────────────┐
-│ jumble_translate()          │
-│ - Sends AI text to LibreTranslate│
-│ - Multiple translations + jumble │
-└───────────┬─────────────────┘
-            │
-            ▼
-┌─────────────────────────────┐
-│ extra fun:                  │
-│ - additive_shift_cipher()    │
-│ - morse_code() + clue        │
-└───────────┬─────────────────┘
-            │
-            ▼
-┌───────────────────────────┐
-│ Django Template (index.html)│
-│ - Shows:                    │
-│   1. Absurd multilingual text│
-│   2. Ciphered output         │
-│   3. Morse code + clue       │
-└───────────┬─────────────────┘
-            │
-            ▼
-┌─────────────┐
-│   User      │
-│ Laughs /    │
-│ Gets Confused│
-└─────────────┘
 
 
+Final product
 
 <img width="796" height="888" alt="image" src="https://github.com/user-attachments/assets/05ea6f51-30c0-4340-a83d-806c25a6fde2" />
 
@@ -167,6 +120,8 @@ When a user visits The Un-Linguist web app, they are greeted with a clean and mi
 ## Team Contributions
 Team Contributions
 Kailas M S: Django backend setup, API integration, LibreTranslate Docker wizardry.
+
+
 Mohammed Roshan A N: NLTK setup, GPT prompt engineering, cipher & chaos logic, frontend design.
 
 
